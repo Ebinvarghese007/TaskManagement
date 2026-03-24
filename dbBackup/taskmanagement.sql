@@ -118,8 +118,8 @@ ALTER TABLE ONLY public.user_tasks ALTER COLUMN task_id SET DEFAULT nextval('pub
 --
 
 COPY public.tbl_users (user_id, user_name, user_email, user_password, is_active, created_at, updated_at) FROM stdin;
-9	mariya	mariya@gmail.com	$2y$10$ckalU9NSibfy8UnmTIWA9ujHQEcDNYlEtMKWf4ZHClQDxiYwc6mQi	t	2026-03-24 16:31:13.186205	2026-03-24 16:31:13.186205
-10	Ebin	ebin@gmail.com	$2y$10$6NrOtq7yu9gcxayW3iIGwexoR8MVJCe6XmyHNoerwQeZQUZYIB4qS	t	2026-03-24 16:36:18.791451	2026-03-24 16:36:18.791451
+11	EBIN	ebin@gmail.com	$2y$10$wc0ktWTVDefcUVLafJOB8.zc2OfWRsNrAmQMOSTOcqE2.YFXFSxR6	t	2026-03-24 17:25:37.236965	2026-03-24 17:25:37.236965
+12	Mariya	mariya@gmail.com	$2y$10$rMDKm6/fb.g5YGtZsDWS2OxPd4gP5lGOWZN5IxnkDQn8vmN0ih04e	t	2026-03-24 17:27:08.794261	2026-03-24 17:27:08.794261
 \.
 
 
@@ -135,7 +135,7 @@ COPY public.user_tasks (task_id, user_id, task_name, task_priority, task_due_dat
 -- Name: tbl_users_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.tbl_users_user_id_seq', 10, true);
+SELECT pg_catalog.setval('public.tbl_users_user_id_seq', 12, true);
 
 
 --

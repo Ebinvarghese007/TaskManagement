@@ -72,6 +72,34 @@ CREATE DATABASE taskManagement;
 * Import your SQL file 
 import sql file from the folder dbBackup
 if import not work from UI, please upload through cmd
+
+# * if its not work please execute the query for table creation
+
+   CREATE TABLE tbl_users (
+    user_id SERIAL PRIMARY KEY,
+    user_name VARCHAR(100) NOT NULL,
+    user_email VARCHAR(150) UNIQUE NOT NULL,
+    user_password TEXT NOT NULL, -- best for hashed passwords
+    is_active BOOLEAN DEFAULT TRUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+ CREATE TABLE user_tasks (
+    task_id SERIAL PRIMARY KEY,
+    user_id INT NOT NULL,
+    task_name VARCHAR(255) NOT NULL,
+    task_priority VARCHAR(50) NOT NULL,
+    task_due_date DATE NOT NULL,
+	task_status VARCHAR(50) NOT NULL,
+    task_created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	task_updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    -- Foreign key (assuming you have a users table)
+    CONSTRAINT fk_user
+        FOREIGN KEY(user_id) 
+        REFERENCES tbl_users(user_id)
+        ON DELETE CASCADE
+);
   
 * Update your database config in PHP:
 config.php
@@ -101,18 +129,24 @@ http://localhost/taskManagement
 ```
 /task-management
 │── /assets
+ -js
+ -bootstrap
 │── /config
+ -config.php
 │── /controllers
+  -userRegistrstionController
+  -taskManagementController
+  -loginController
 │── /ajax
 │── /views
-│── index.php
-│── login.php
-│── dashboard.php
-```
-
+ ── index.php
+ ── login.php
+ ── dashboard.php
+ ── index.php
+ ── login.php
 ---
 
-##  Future Improvements
+## Improvements
 
 * Password hashing & security enhancements
 * User Registration
@@ -124,11 +158,5 @@ http://localhost/taskManagement
 ##  Author
 
 **Ebin Varghese**
-
----
-
-##  License
-
-This project is open-source and available for learning and development purposes.
 
 ---
