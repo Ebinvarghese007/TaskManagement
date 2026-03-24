@@ -69,10 +69,12 @@ cd taskManagement
 CREATE DATABASE taskManagement;
 ```
 
-* Import your SQL file (if available)
+* Import your SQL file 
+import sql file from the folder dbBackup
+if import not work from UI, please upload through cmd
   
 * Update your database config in PHP:
-   config.php
+config.php
 $host = "localhost";
 $port = "5432";
 $db   = "taskManagement";
