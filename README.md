@@ -73,7 +73,7 @@ CREATE DATABASE taskManagement;
 import sql file from the folder dbBackup
 if import not work from UI, please upload through cmd
 
-# * if its not work please execute the query for table creation
+# * if the database import not work please execute the query for table creation
 
    CREATE TABLE tbl_users (
     user_id SERIAL PRIMARY KEY,
@@ -100,7 +100,10 @@ if import not work from UI, please upload through cmd
         REFERENCES tbl_users(user_id)
         ON DELETE CASCADE
 );
-  
+  INSERT INTO public.tbl_users(user_name, user_email, user_password)VALUES ('EBIN', 'ebin@gmail.com', '$2y$10$wc0ktWTVDefcUVLafJOB8.zc2OfWRsNrAmQMOSTOcqE2.YFXFSxR6');
+
+INSERT INTO public.tbl_users(user_name, user_email, user_password)VALUES ('Mariya', 'mariya@gmail.com', '$2y$10$rMDKm6/fb.g5YGtZsDWS2OxPd4gP5lGOWZN5IxnkDQn8vmN0ih04e');
+
 * Update your database config in PHP:
 config.php
 $host = "localhost";
