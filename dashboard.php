@@ -115,11 +115,6 @@ $(document).ready(function() {
     viewTask();
 });
 
-// alert();
-    // $('#registerForm').submit(function(e) {
-        // e.preventDefault(); // prevent page reload
-
-        // let formData = $(this).serialize();
 function createTask(){
     
     var task_name = $("#task_name").val();
@@ -133,24 +128,19 @@ function createTask(){
             data: {function:1,task_name:task_name,task_priority:task_priority,task_due_date:task_due_date },
             success: function(response) {
                   if(response.status === 'error') {
-                    // Show the message in console
                     alert(response.message);
 
-                    // Or show it in the HTML page
-                    // $('#error-message').text(response.message);
                 } else {
                     alert(response.message);
                 }
                 $('#taskModal').modal('hide');
-                viewTask('active')
-                // alert(respose['message'])
+                viewTask('active');
             },
             error: function() {
                 alert('Something went wrong!');
             }
         });
 
-    // });
 }
 function viewTask(taskStatus='active'){
     
@@ -164,7 +154,6 @@ function viewTask(taskStatus='active'){
             dataType:'json',
             data: {function:2,taskStatus:taskStatus},
             success: function(response) {
-                // alert(response['taskHtml']);
                   $(".tableContent").html(response.taskHtml);
             },
             error: function() {
@@ -172,7 +161,6 @@ function viewTask(taskStatus='active'){
             }
         });
 
-    // });
 }
 function edit_task(task_id="") {
     $.ajax({
@@ -223,7 +211,6 @@ success: function(response) {
 }
 function delete_task(task_id){
     if(confirm("Are you sure you want to delete?")) {
-        // var task_id = $("#task_id").val();
     $.ajax({
         url: 'taskManageController.php',
         type: 'POST',
@@ -247,7 +234,6 @@ function showbtns(){
     $('#createTaskBtn').show();
     $('#task_active_status').hide();
 }
-// });
 </script>
 </body>
 </html>

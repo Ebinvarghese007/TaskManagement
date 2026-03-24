@@ -20,8 +20,6 @@ A simple and efficient **Task Management Web Application** built using Core PHP,
 *  AJAX-based operations (no page reload)
 *  Responsive UI using Bootstrap
 
----
-
 ##  Tech Stack
 
 * **Backend:** Core PHP
@@ -29,14 +27,27 @@ A simple and efficient **Task Management Web Application** built using Core PHP,
 * **Database:** PostgreSQL
 * **AJAX:** For asynchronous operations and better UX
 
----
-
 ##  How It Works
 
-* Users register and log in securely
-* After login, users are redirected to a dashboard
-* All task operations (Create, Read, Update, Delete) are handled using AJAX
-* Tasks are dynamically filtered using status tabs without reloading the page
+##  Application Workflow
+
+- **User Registration & Authentication**  
+  New users can create an account by providing their basic credentials. The system validates user input and securely stores user data in the PostgreSQL database. Registered users can log in using their credentials, ensuring that only authenticated users can access the application features.
+
+- **Dashboard Access After Login**  
+  Once authenticated, users are redirected to a personalized dashboard where they can view and manage their tasks. The dashboard acts as the central hub, displaying task data in a structured and user-friendly interface.
+
+- **AJAX-Based Task Operations (CRUD)**  
+  All task-related operations — including creating new tasks, retrieving existing tasks, updating task details, and deleting tasks — are performed asynchronously using AJAX. This eliminates the need for full page reloads and provides a seamless, fast, and responsive user experience.
+
+- **Dynamic Task Filtering with Tabs**  
+  Tasks are categorized based on their status (e.g., Active, Completed, Pending). Users can switch between tabs to filter tasks instantly. The filtering is handled dynamically on the client side using AJAX, ensuring that only relevant data is displayed without refreshing the page.
+
+- **Single Page Application Behavior**  
+  Although built with Core PHP, the use of AJAX enables the application to behave like a Single Page Application (SPA). This improves usability by reducing load times and creating a smoother interaction flow.
+
+- **Real-Time UI Updates**  
+  Any changes made to tasks (such as status updates or deletions) are immediately reflected in the UI without requiring a manual refresh, enhancing overall user experience.
 
 ---
 
@@ -44,14 +55,10 @@ A simple and efficient **Task Management Web Application** built using Core PHP,
 
 ### 1 Clone the repository
 
-```bash
-git clone https://github.com/yourusername/task-management.git
-```
-
 ### 2 Navigate to project folder
 
-```bash
-cd task-management
+```bash 
+cd taskManagement
 ```
 
 ### 3 Setup Database (PostgreSQL)
@@ -59,7 +66,7 @@ cd task-management
 * Create a database:
 
 ```sql
-CREATE DATABASE task_management;
+CREATE DATABASE taskManagement;
 ```
 
 * Import your SQL file (if available)
@@ -68,7 +75,7 @@ CREATE DATABASE task_management;
    config.php
 $host = "localhost";
 $port = "5432";
-$db   = "task_management";
+$db   = "taskManagement";
 $user = "postgres";
 $pass = "postgres";
 ```
@@ -82,7 +89,7 @@ $pass = "postgres";
 * Open in browser:
 
 ```
-http://localhost/task-management
+http://localhost/taskManagement
 ```
 
 ---

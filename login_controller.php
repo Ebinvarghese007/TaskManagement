@@ -11,9 +11,6 @@ try {
         // Fetch user
         $stmt = $pdo->prepare("SELECT * FROM public.tbl_users WHERE user_email = :email");
         $stmt->execute(['email' => $email]);
-//         echo "Query: " . $stmt->queryString . "<br>";
-// echo "Email: " . $email;
-// exit;
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
     //    echo '=>'.$user;exit;  
         if ($user) {

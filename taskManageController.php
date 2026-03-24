@@ -23,8 +23,6 @@ if($_POST['function'] == 1){
         INSERT INTO user_tasks (user_id, task_name, task_priority, task_due_date,task_status)
         VALUES (:user_id, :task_name, :task_priority, :task_due_date,:task_status)
     ");
-    // $task_due_date_input = date('Y-m-d', strtotime($task_due_date));
-        // echo "Query: " . $stmt->queryString . "<br>";
     $stmt->execute([
         'user_id' => $user_id,
         'task_name' => $task_name,
@@ -46,6 +44,8 @@ if($_POST['function'] == 1){
     ]);
     }
 }
+
+
 if($_POST['function'] == 2){
     $user_id = $_SESSION['user_id'];
     $taskStatus = $_POST['taskStatus'];
@@ -94,7 +94,6 @@ if($_POST['function'] == 2){
     }
         
 // echo $stmt->queryString;
-        // Fetch all rows as array
 $taskdetailsArr = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $taskhtml = '';
 $result = array();
@@ -139,6 +138,8 @@ if(!empty($taskdetailsArr)){
 }
   echo json_encode($result);
 }
+
+
 if($_POST['function']==3){
 $user_id = $_SESSION['user_id'];
 if (empty($_POST['task_id']) && empty($user_id)) {

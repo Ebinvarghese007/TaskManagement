@@ -4,24 +4,18 @@ require_once 'config.php';
 
 try {
     
-
-    // CHECK REQUEST
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-        // GET DATA
         $username = $_POST['newusername'] ?? '';
         $email    = $_POST['newuseremail'] ?? '';
         $password = $_POST['newuserpassword'] ?? '';
 
-        // BASIC VALIDATION
         if (empty($username) || empty($email) || empty($password)) {
             echo json_encode(['status' => 'error', 'message' => 'All fields are required']);
             exit;
         }
-        // HASH PASSWORD (IMPORTANT)
+
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-        // CHECK IF EMAIL EXISTS
         $checkStmt = $pdo->prepare("SELECT user_id FROM tbl_users WHERE user_email = :email");
         $checkStmt->execute(['email' => $email]);
 
