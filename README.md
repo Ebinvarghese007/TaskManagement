@@ -1,4 +1,4 @@
-# 🗂️ Task Management System
+#  Task Management System
 
 A simple and efficient **Task Management Web Application** built using Core PHP, PostgreSQL, and AJAX. This application allows users to manage their daily tasks with a smooth, single-page experience (no full page reloads).
 
