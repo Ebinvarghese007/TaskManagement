@@ -118,10 +118,17 @@ $pass = "postgres";
 * Start Apache & PostgreSQL
 * Open in browser:
 
-```
 http://localhost/taskManagement
-```
 
+# * user name and password
+---------------------------------
+
+       1.   ebin@gmail.com
+            123456
+       2.   mariya@gmail.com
+            654321
+
+          you can create new users through this application
 ---
 
 ##  Project Structure (Basic)
