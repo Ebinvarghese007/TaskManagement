@@ -18,6 +18,7 @@ try {
         if (password_verify($password, $user['user_password'])) {
             $_SESSION['user_id'] = $user['user_id'];
             $_SESSION['user_email']   = $user['user_email']; // fixed key
+            $_SESSION['user_name']   = $user['user_name']; // fixed key
 
             header("Location: dashboard.php");
             exit;

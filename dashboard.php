@@ -1,3 +1,4 @@
+<?php session_start(); $user_name = $_SESSION['user_name'];?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +11,7 @@
   <div class="container my-4">
     <!-- Header with Logout -->
     <div class="d-flex justify-content-between align-items-center mb-4">
-      <h2>Task Manager</h2>
+      <h2>Task Manager - (<?= $user_name ?>)</h2>
        <a href="login_controller.php?action=logout" class="btn btn-danger">Logout</a>
     </div>
 
